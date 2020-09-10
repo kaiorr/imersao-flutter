@@ -6,10 +6,26 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Text(
-      'Hello Dartzinho seu lindo!',
-      textDirection: TextDirection.ltr,
+    return MaterialApp(
+        home: Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text('My first App'),
+        ),
+      ),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                  child: Text(
+                'Nome',
+              )),
+              Expanded(child: Text('Sobrenome'))
+            ],
+          ),
+        ],
+      ),
     ));
   }
 }
