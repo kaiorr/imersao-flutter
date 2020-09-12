@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
+import 'package:event/event.dart';
 
 void main() => runApp(FlutterConf());
 
@@ -153,6 +153,25 @@ class RowDicas extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class EventScreen extends StatefulWidget {
+  _EventScreentate createState() => _EventScreentate();
+}
+
+class _EventScreentate extends State<EventScreen> {
+  List<Event> _listaFavoritos = [];
+
+  @override
+  Widget build(BuildContext context) {
+    var listView = ListView.builder(
+      itemCount: listaEvent.length,
+      itemBuilder: (context, index) {
+        final event = _listaEvent[index];
+        bool _isFavorito = _listaFavoritos.contains(event);
+      },
     );
   }
 }
