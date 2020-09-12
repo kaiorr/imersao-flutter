@@ -91,3 +91,68 @@ class _HomeScreenState extends State<HomeScreen> {
     ));
   }
 }
+
+class RowInfo extends StatelessWidget {
+  final _style = TextStyle(fontSize: 20);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+            Icon(Icons.calendar_today),
+            SizedBox(height: 5),
+            Text(
+              '10/set',
+              style: _style,
+            ),
+          ],
+        ),
+        Column(
+          children: <Widget>[
+            Icon(Icons.timer),
+            SizedBox(height: 5),
+            Text('19:00', style: _style),
+          ],
+        ),
+        Column(
+          children: <Widget>[
+            Icon(Icons.pin_drop),
+            SizedBox(height: 5),
+            Text(
+              'Evento On-line',
+              style: _style,
+            )
+          ],
+        )
+      ],
+    );
+  }
+}
+
+class RowDicas extends StatelessWidget {
+  final String descricao;
+
+  const RowDicas(this.descricao);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 15),
+      child: Row(
+        children: <Widget>[
+          Icon(Icons.info_outline),
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            descricao,
+            style: TextStyle(fontSize: 18),
+          ),
+        ],
+      ),
+    );
+  }
+}
