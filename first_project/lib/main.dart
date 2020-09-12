@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+btnAction() {
+  print("Botão Clicado");
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,33 +20,32 @@ class MyApp extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    height: 100,
                     color: Colors.red,
                   ),
                 ),
                 Row(
                   children: [
-                    Expanded(
-                      child: Container(
-                        height: 80,
-                        color: Colors.blue,
-                      ),
+                    FlatButton(
+                      height: 100,
+                      child: Text('Home'),
+                      color: Colors.blue,
+                      onPressed: btnAction,
                     ),
                     Expanded(
                       child: Container(
-                        height: 80,
+                        height: 100,
                         color: Colors.green,
                       ),
                     ),
                     Expanded(
                       child: Container(
-                        height: 80,
+                        height: 100,
                         color: Colors.orange,
                       ),
                     ),
                     Expanded(
                       child: Container(
-                        height: 80,
+                        height: 100,
                         color: Colors.yellow,
                       ),
                     )
