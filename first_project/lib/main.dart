@@ -19,9 +19,7 @@ class MyApp extends StatelessWidget {
             body: Column(
               children: [
                 Expanded(
-                  child: Container(
-                    color: Colors.red,
-                  ),
+                  child: Container(),
                 ),
                 Row(
                   children: [
