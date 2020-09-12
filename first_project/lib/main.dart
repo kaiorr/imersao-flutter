@@ -14,22 +14,38 @@ class MyApp extends StatelessWidget {
             ),
             body: Column(
               children: [
-                Container(
-                  height: 100,
-                  color: Colors.red,
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    color: Colors.red,
+                  ),
                 ),
                 Row(
                   children: [
-                    Container(
-                      width: 150,
-                      height: 100,
-                      color: Colors.blue,
+                    Expanded(
+                      child: Container(
+                        height: 80,
+                        color: Colors.blue,
+                      ),
                     ),
-                    Container(
-                      width: 150,
-                      height: 100,
-                      color: Colors.green,
+                    Expanded(
+                      child: Container(
+                        height: 80,
+                        color: Colors.green,
+                      ),
                     ),
+                    Expanded(
+                      child: Container(
+                        height: 80,
+                        color: Colors.orange,
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 80,
+                        color: Colors.yellow,
+                      ),
+                    )
                   ],
                 )
               ],
