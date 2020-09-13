@@ -1,6 +1,6 @@
-import 'package:event/palestras.dart';
-import 'package:flutter/material.dart';
 import 'package:event/event.dart';
+import 'package:flutter/material.dart';
+import 'package:event/palestras.dart';
 
 void main() => runApp(FlutterConf());
 
@@ -34,20 +34,20 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.only(bottom: 15),
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: Text(
-                'Rock in Rio',
-                style: TextStyle(
-                  fontFamily: 'Righteous',
-                  fontSize: 50,
-                  color: Colors.white,
-                ),
-              ),
+              // child: Text(
+              //   'Flutterando',
+              //   style: TextStyle(
+              //     fontFamily: 'Righteous',
+              //     fontSize: 50,
+              //     color: Colors.white,
+              //   ),
+              // ),
             ),
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  'assets/party.jpg',
+                  'assets/latam.jpg',
                 ),
               ),
             ),
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return HomeScreen();
+                return EventScreen();
               }));
             },
             child: Text(
@@ -106,7 +106,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class RowInfo extends StatelessWidget {
   final _style = TextStyle(fontSize: 20);
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -117,7 +116,7 @@ class RowInfo extends StatelessWidget {
             Icon(Icons.calendar_today),
             SizedBox(height: 5),
             Text(
-              '10/set',
+              '10/Set',
               style: _style,
             ),
           ],
@@ -126,7 +125,10 @@ class RowInfo extends StatelessWidget {
           children: <Widget>[
             Icon(Icons.timer),
             SizedBox(height: 5),
-            Text('19:00', style: _style),
+            Text(
+              '19:00',
+              style: _style,
+            ),
           ],
         ),
         Column(
@@ -134,11 +136,11 @@ class RowInfo extends StatelessWidget {
             Icon(Icons.pin_drop),
             SizedBox(height: 5),
             Text(
-              'Evento On-line',
+              'Evento on-line',
               style: _style,
-            )
+            ),
           ],
-        )
+        ),
       ],
     );
   }
@@ -170,12 +172,13 @@ class RowDicas extends StatelessWidget {
 }
 
 class EventScreen extends StatefulWidget {
+  EventScreen({Key key}) : super(key: key);
+
   _EventScreentate createState() => _EventScreentate();
 }
 
 class _EventScreentate extends State<EventScreen> {
   List<Event> _listaFavoritos = [];
-
   @override
   Widget build(BuildContext context) {
     var listView = ListView.builder(
@@ -189,7 +192,10 @@ class _EventScreentate extends State<EventScreen> {
           leading: Text(event.horario),
           trailing: IconButton(
             icon: _isFavorito
-                ? Icon(Icons.favorite, color: Colors.red)
+                ? Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  )
                 : Icon(
                     Icons.favorite_border,
                   ),
@@ -207,19 +213,22 @@ class _EventScreentate extends State<EventScreen> {
       },
     );
     return Scaffold(
-      appBar: AppBar(title: Text('Palestras'), actions: <Widget>[
-        IconButton(
-          icon: Icon(
-            Icons.favorite,
-            color: Colors.white,
+      appBar: AppBar(
+        title: Text('Palestras'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.favorite,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return AgendaScreen(listaFavoritos: _listaFavoritos);
+              }));
+            },
           ),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return AgendaScreen(listaFavoritos: _listaFavoritos);
-            }));
-          },
-        )
-      ]),
+        ],
+      ),
       body: listView,
     );
   }
@@ -240,43 +249,50 @@ class _AgendaScreenState extends State<AgendaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Agenda'),
-        ),
-        body: ListView.builder(
-            padding: const EdgeInsets.all(14.0),
-            itemCount: widget.listaFavoritos.length,
-            itemBuilder: (context, index) {
-              final event = widget.listaFavoritos[index];
-              return Card(
-                  child: Column(children: <Widget>[
+      appBar: AppBar(
+        title: Text('Agenda'),
+      ),
+      body: ListView.builder(
+        padding: const EdgeInsets.all(14.0),
+        itemCount: widget.listaFavoritos.length,
+        itemBuilder: (context, index) {
+          final event = widget.listaFavoritos[index];
+          return Card(
+            child: Column(
+              children: <Widget>[
                 Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          event.empresa,
-                          style: _style,
-                        ),
-                        Text(
-                          event.horario,
-                          style: _style,
-                        ),
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        event.empresa,
+                        style: _style,
+                      ),
+                      Text(
+                        event.horario,
+                        style: _style,
+                      ),
+                    ],
+                  ),
+                ),
                 Divider(),
                 Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Icon(Icons.thumb_up),
-                        Icon(Icons.comment),
-                        Icon(Icons.share),
-                      ],
-                    ))
-              ]));
-            }));
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Icon(Icons.thumb_up),
+                      Icon(Icons.comment),
+                      Icon(Icons.share),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
   }
 }

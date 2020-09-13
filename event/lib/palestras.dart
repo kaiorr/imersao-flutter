@@ -9,7 +9,7 @@ final List<Event> listaEvent = [
   const Event(
     empresa: 'Fluterando',
     horario: '19:00 - 19:30',
-    assunto: 'Evento Principal',
+    assunto: 'Hasura Connect',
   ),
   const Event(
     empresa: 'LarApp',
@@ -19,16 +19,16 @@ final List<Event> listaEvent = [
   const Event(
     empresa: 'CloudWalk',
     horario: '19:50 - 20:10',
-    assunto: '',
+    assunto: 'Utilização Flutter no app',
   ),
   const Event(
     empresa: 'IATEC',
     horario: '20:10 - 20:30',
-    assunto: 'Utilização do flutter na construção do App',
+    assunto: '',
   ),
   const Event(
-    empresa: 'CloudWalk',
-    horario: '19:50 - 20:10',
+    empresa: 'Rodrigo Branas',
+    horario: '20:30 - 21:00',
     assunto: '',
   ),
   const Event(
