@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "104280650683",
+    "firebase_url": "https://zero-to-hero-63592.firebaseio.com",
+    "project_id": "zero-to-hero-63592",
+    "storage_bucket": "zero-to-hero-63592.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104280650683:android:7bf4e99a7944fb52568a9e",
+        "android_client_info": {
+          "package_name": "com.example.teste_base"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104280650683-haig16d2olflr6li0gt1s8fbm9f4t550.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWLMIyqBAD0mxGYXdnZism8sRnZuVVNOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104280650683-haig16d2olflr6li0gt1s8fbm9f4t550.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
