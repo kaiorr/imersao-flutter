@@ -1,1 +1,4 @@
-abstract class HomeRepository {}
+abstract class HomeRepository {
+  Future getTarefas();
+  Stream streamTarefas();
+}
