@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
+import 'package:singleton/singleton/singleton_factory.dart';
 import 'package:singleton/singleton/singleton_raiz.dart';
 
 class SingletonPattern extends StatefulWidget {
@@ -13,7 +14,8 @@ class _SingletonPatternState extends State<SingletonPattern> {
     super.initState();
     int i = 0;
     while (i <= 10) {
-      print(SingletonRaiz.instance.id);
+      // print(SingletonRaiz.instance.id);
+      print(SingletonFactory().id);
       i++;
     }
   }
