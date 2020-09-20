@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:singleton/singleton_pattern.dart';
 
 void main() {
   runApp(MyApp());
