@@ -38,4 +38,9 @@ class Connection {
   }
 
   FutureOr<void> _onUpgrade(Database db, int oldVersion, int newVersion) {}
+
+  Future<void> closeConnection() async {
+    await _db.close();
+    _db = null;
+  }
 }

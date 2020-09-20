@@ -37,10 +37,28 @@ class _SingletonPatternState extends State<SingletonPattern> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Singleton')),
-      body: Container(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          var db = await Connection.instance.db;
+          await db.rawInsert("insert into teste values('adicionado pelo app')");
+          buscarNomes();
+        },
+        child: Icon(Icons.add),
+      ),
+      body: ListView.builder(
+        itemCount: nomes.length,
+        itemBuilder: (_, index) => ListTile(
+          title: Text(nomes[index]),
+        ),
+      ),
     );
   }
 }
