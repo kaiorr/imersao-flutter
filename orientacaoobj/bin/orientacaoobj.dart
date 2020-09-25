@@ -1,5 +1,18 @@
-import 'package:orientacaoobj/orientacaoobj.dart' as orientacaoobj;
+void main() {
+  contaCorrente conta = contaCorrente();
+  conta.titular = "Kaio Rocha Ribeiro";
+  conta.agencia = 1234;
+  conta.conta = 123456;
+  conta.saldo = 150.00;
+  print("Titular: ${conta.titular}");
+  print("Agencia: ${conta.agencia}");
+  print("Agencia: ${conta.conta}");
+  print("Saldo: ${conta.saldo}");
+}
 
-void main(List<String> arguments) {
-  print('Hello world: ${orientacaoobj.calculate()}!');
+class contaCorrente {
+  String titular;
+  int agencia;
+  int conta;
+  double saldo;
 }
