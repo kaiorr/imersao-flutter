@@ -20,7 +20,7 @@ final List<Event> listaEvent = [
   const Event(
     empresa: 'IATEC',
     horario: '20:10 - 20:30',
-    assunto: '',
+    assunto: 'Porque Flutter',
   ),
   const Event(
     empresa: 'Rodrigo Branas',

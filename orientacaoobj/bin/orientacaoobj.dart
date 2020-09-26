@@ -1,13 +1,14 @@
 void main() {
-  contaCorrente conta = contaCorrente();
-  conta.titular = "Kaio Rocha Ribeiro";
-  conta.agencia = 1234;
-  conta.conta = 123456;
-  conta.saldo = 150.00;
-  print("Titular: ${conta.titular}");
-  print("Agencia: ${conta.agencia}");
-  print("Agencia: ${conta.conta}");
-  print("Saldo: ${conta.saldo}");
+  contaCorrente conta1 = contaCorrente();
+  contaCorrente conta2 = contaCorrente();
+
+  conta1.titular = "Kaio Rocha Ribeiro";
+  conta2.titular = "Kaio Ribeiro Roc";
+  conta1.agencia = 1234;
+  conta1.conta = 123456;
+  conta1.saldo = 150.00;
+  print("Titular: ${conta1.titular}");
+  print("Titular: ${conta2.titular}");
 }
 
 class contaCorrente {
