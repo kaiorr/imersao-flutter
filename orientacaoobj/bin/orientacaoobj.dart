@@ -1,19 +1,31 @@
 void main() {
-  contaCorrente conta1 = contaCorrente();
-  contaCorrente conta2 = contaCorrente();
+  contaCorrente contaKaio = contaCorrente();
+  contaKaio.titular = "Kaio Ribeiro";
 
-  conta1.titular = "Kaio Rocha Ribeiro";
-  conta2.titular = "Kaio Ribeiro Roc";
-  conta1.agencia = 1234;
-  conta1.conta = 123456;
-  conta1.saldo = 150.00;
-  print("Titular: ${conta1.titular}");
-  print("Titular: ${conta2.titular}");
+  contaKaio.deposito(50.00);
+  print("Valor depositado ${contaKaio.deposito}");
+  print("Titular, ${contaKaio.titular}: ${contaKaio.saldo} ");
+  contaKaio.saque(80.00);
 }
 
 class contaCorrente {
   String titular;
   int agencia;
   int conta;
-  double saldo;
+  double saldo = 20.00;
+
+  void saque(double valorSaque) {
+    if (this.saldo - valorSaque <= -100) {
+      print(
+          "O limite do cheque especial é R${100.00}, o valor do seu saque ultrapassa esse valor ");
+    } else {
+      print("Sacando $valorSaque ");
+      this.saldo -= valorSaque;
+      print("Saldo Final $saldo");
+    }
+  }
+
+  void deposito(double valorDeposito) {
+    this.saldo += valorDeposito;
+  }
 }
